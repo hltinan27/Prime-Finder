@@ -18,6 +18,17 @@ class MainViewController: UIViewController {
       addCalculatorViewControllerAsAChildViewController()
       
     }
+  override var traitCollection: UITraitCollection{
+    if UIDevice.current.userInterfaceIdiom == .pad{
+      if UIDevice.current.orientation.isLandscape{
+        return UITraitCollection(traitsFrom: [
+          UITraitCollection(horizontalSizeClass: .regular),
+          UITraitCollection(verticalSizeClass: .compact)
+          ])
+      }
+    }
+    return super.traitCollection
+  }
   
   func addCalculatorViewControllerAsAChildViewController(){
     

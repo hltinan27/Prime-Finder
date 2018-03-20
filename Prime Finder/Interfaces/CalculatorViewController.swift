@@ -15,5 +15,11 @@ class CalculatorViewController: UIViewController {
 
         
     }
-
+  @IBAction func buttomTouchDownAction(_ sender: UIButton) {
+    print("Tag \(sender.tag)")
+  }
+  
+  @IBAction func buttonTouchUpInsideOutsideCancel(_ sender: UIButton) {
+  }
+  
 }

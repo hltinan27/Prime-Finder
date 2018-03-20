@@ -20,7 +20,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-DI-Ypc" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lCU-DI-Ypc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="02D-Xn-EED"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lCU-DI-Ypc" secondAttribute="trailing" id="JnM-W0-F3g"/>
+                            <constraint firstItem="lCU-DI-Ypc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nNL-h9-YtM"/>
+                            <constraint firstAttribute="bottom" secondItem="lCU-DI-Ypc" secondAttribute="bottom" id="p3s-uZ-FXM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -44,114 +55,192 @@
                                         <variation key="heightClass=compact-widthClass=compact" image="imageView:JgH-BW-6RF:image"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="cavity_landscape"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="cavity_portrait"/>
-                                        <variation key="heightClass=regular-widthClass=regular" image="8C288394-9165-4CB9-B78E-E4765125B2E2"/>
+                                        <variation key="heightClass=regular-widthClass=regular" image="5AB50E71-C528-4885-9519-D0FB68068EB0"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-0g-RCO" userLabel="InnerHolder">
                                         <rect key="frame" x="15.5" y="14.5" width="614" height="614.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-4L-mp9">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-4L-mp9">
                                                 <rect key="frame" x="460.5" y="0.0" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E7h-4L-mp9" secondAttribute="height" multiplier="1:1" id="8xJ-F5-qnQ"/>
                                                 </constraints>
                                                 <state key="normal" title="Modes" image="button_modes"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="Xnz-Kv-Vpy"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="VU4-ga-u0Z"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="biv-wJ-tsi"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="z3X-2E-ZWx"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8r-iH-fTa">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8r-iH-fTa">
                                                 <rect key="frame" x="460.5" y="153.5" width="153.5" height="306.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="A8r-iH-fTa" secondAttribute="height" multiplier="1:2" id="swM-gb-2R6"/>
                                                 </constraints>
                                                 <state key="normal" title="Enter" image="button_enter"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="sER-gy-XSP"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="h3B-hu-rFV"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="o3D-Fe-nrD"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="uCR-0x-3Ez"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-lD-Bdz">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-lD-Bdz">
                                                 <rect key="frame" x="307" y="0.0" width="153.5" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5ha-lD-Bdz" secondAttribute="height" multiplier="1:1" id="gU2-xT-0Nd"/>
                                                 </constraints>
                                                 <state key="normal" title="9" image="button_9"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="hE4-Lg-vij"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="lNO-fA-bpI"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="tHt-ks-1Bi"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="xm6-3M-Czu"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOJ-z7-jW2">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOJ-z7-jW2">
                                                 <rect key="frame" x="153.5" y="0.0" width="153.5" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xOJ-z7-jW2" secondAttribute="height" multiplier="1:1" id="29B-HE-tt7"/>
                                                 </constraints>
                                                 <state key="normal" title="8" image="button_8"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="k38-62-n7z"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="7Tp-jK-BBz"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="Jbd-X9-3PD"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="zmJ-dB-CoA"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzp-Ff-qre">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzp-Ff-qre">
                                                 <rect key="frame" x="0.0" y="0.0" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hzp-Ff-qre" secondAttribute="height" multiplier="1:1" id="XKr-bF-SAf"/>
                                                 </constraints>
                                                 <state key="normal" title="7" image="button_7"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="7fu-3o-JaT"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="Mjq-ok-ZbW"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="dmU-K2-uvF"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="mvz-gb-o8F"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR1-1d-GnX">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR1-1d-GnX">
                                                 <rect key="frame" x="307" y="154" width="153.5" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FR1-1d-GnX" secondAttribute="height" multiplier="1:1" id="Lks-5X-vQO"/>
                                                 </constraints>
                                                 <state key="normal" title="6" image="button_6"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="6s3-TZ-kKt"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="2rU-UW-3Wi"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="Cpa-Kw-LUY"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="flP-Dt-KZE"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvE-mc-Whe">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvE-mc-Whe">
                                                 <rect key="frame" x="153.5" y="154" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="AvE-mc-Whe" secondAttribute="height" multiplier="1:1" id="3OG-3k-vjg"/>
                                                 </constraints>
                                                 <state key="normal" title="5" image="button_5"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="nK7-l6-RR4"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="51A-uz-b4b"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="AjE-c1-XzI"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="QvJ-HM-AWf"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yY6-dq-RrO">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yY6-dq-RrO">
                                                 <rect key="frame" x="0.0" y="153.5" width="153.5" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yY6-dq-RrO" secondAttribute="height" multiplier="1:1" id="Ztg-cm-Gdw"/>
                                                 </constraints>
                                                 <state key="normal" title="4" image="button_4"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="jou-yU-psq"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="FyN-fc-wQd"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="PAm-mV-Qxg"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="zmw-eF-dSl"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-7w-wgM">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-7w-wgM">
                                                 <rect key="frame" x="307" y="308" width="153.5" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="UCB-7w-wgM" secondAttribute="height" multiplier="1:1" id="8VS-Mn-gl9"/>
                                                 </constraints>
                                                 <state key="normal" title="3" image="button_3"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="z7a-xr-geI"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="6x4-Np-B9P"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="8et-P7-dqN"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="9eR-Rj-o2M"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKl-Kc-7ui">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKl-Kc-7ui">
                                                 <rect key="frame" x="153.5" y="307.5" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="nKl-Kc-7ui" secondAttribute="height" multiplier="1:1" id="esM-Fr-ZCw"/>
                                                 </constraints>
                                                 <state key="normal" title="2" image="button_2"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="hRK-KQ-wTP"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="SRd-n1-XP3"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="a0z-mh-txN"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="hK5-Xj-Wlp"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVH-JQ-eAs">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVH-JQ-eAs">
                                                 <rect key="frame" x="0.0" y="307.5" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fVH-JQ-eAs" secondAttribute="height" multiplier="1:1" id="lKY-lB-c3p"/>
                                                 </constraints>
                                                 <state key="normal" title="1" image="button_1"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="64X-7f-zJJ"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="FmV-gd-aoz"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="Zq8-Cm-G3a"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="zWF-BS-vUt"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4i-S3-McZ">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4i-S3-McZ">
                                                 <rect key="frame" x="307" y="462" width="153.5" height="153.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="P4i-S3-McZ" secondAttribute="height" multiplier="1:1" id="rbx-Hh-pkL"/>
                                                 </constraints>
                                                 <state key="normal" title="C" image="button_clear"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="u0R-af-sV8"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="DGV-q1-86I"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="PRq-rw-fVX"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="ffC-US-phl"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvi-9q-9NV">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvi-9q-9NV">
                                                 <rect key="frame" x="153.5" y="461" width="153.5" height="153"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="cvi-9q-9NV" secondAttribute="height" multiplier="1:1" id="RW4-xn-ova"/>
                                                 </constraints>
                                                 <state key="normal" title="&lt;" image="button_backSpace"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="snc-xL-0FR"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="mx5-p2-iE5"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="oQp-QN-K5O"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="qwl-Gl-4mM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-OR-xyD">
                                                 <rect key="frame" x="0.0" y="461" width="153.5" height="154"/>
@@ -160,6 +249,12 @@
                                                     <constraint firstAttribute="width" secondItem="ex4-OR-xyD" secondAttribute="height" multiplier="1:1" id="t5F-I1-LFA"/>
                                                 </constraints>
                                                 <state key="normal" title="0" image="button_0"/>
+                                                <connections>
+                                                    <action selector="buttomTouchDownAction:" destination="muD-Lj-Nhg" eventType="touchDown" id="Wgn-qE-BAn"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpOutside" id="30r-Tp-dOT"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchCancel" id="7Tc-hk-QSZ"/>
+                                                    <action selector="buttonTouchUpInsideOutsideCancel:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="aSc-Jk-Hoc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -300,9 +395,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-bV-re3" userLabel="DisplayHolder">
                                 <rect key="frame" x="38.5" y="82" width="691" height="184.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-to-kzw" userLabel="Display">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-to-kzw" userLabel="Display" customClass="Display" customModule="Prime_Finder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="691" height="153.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Xi-to-kzw" secondAttribute="height" multiplier="4.5" id="d1L-Wk-s7l"/>
                                         </constraints>
@@ -316,7 +411,7 @@
                                     <constraint firstItem="5Xi-to-kzw" firstAttribute="width" secondItem="sCj-bV-re3" secondAttribute="width" id="Y0p-Hh-zkC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-kf-KFW" userLabel="CopyPaste">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-kf-KFW" userLabel="CopyPaste">
                                 <rect key="frame" x="288" y="198" width="192" height="76.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-2C-Czr" userLabel="Copy">
@@ -350,7 +445,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cvi-9q-9NV" firstAttribute="height" secondItem="V7i-fq-dbu" secondAttribute="height" multiplier="0.2" id="10I-Is-wCA"/>
                             <constraint firstItem="sCj-bV-re3" firstAttribute="height" secondItem="V7i-fq-dbu" secondAttribute="height" multiplier="0.24" id="1WU-x9-lNa"/>
@@ -645,7 +740,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8C288394-9165-4CB9-B78E-E4765125B2E2" width="349" height="349">
+        <image name="5AB50E71-C528-4885-9519-D0FB68068EB0" width="349" height="349">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8819,6 +8914,7 @@ AAd5QgAHeU8AB3lUAAd5VgAHeVgAB3ldAAd5ZQAHeWgAB3ltAAd5dQAHeXgAB3mKAAd5jQAHeZIAAAAA
 AAAEAQAAAAAAAABBAAAAAAAAAAAAAAAAAAd5lA
 </mutableData>
         </image>
+        <image name="background" width="1024" height="1024"/>
         <image name="button_0" width="205" height="205"/>
         <image name="button_1" width="205" height="205"/>
         <image name="button_2" width="205" height="205"/>
