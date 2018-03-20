@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muD-Lj-Nhg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,10 +13,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Prime_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Prime_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="njT-bH-lSP">
             <objects>
-                <viewController id="muD-Lj-Nhg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calculatorViewController" id="muD-Lj-Nhg" customClass="CalculatorViewController" customModule="Prime_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V7i-fq-dbu">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" image="imageView:JgH-BW-6RF:image"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="cavity_landscape"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="cavity_portrait"/>
-                                        <variation key="heightClass=regular-widthClass=regular" image="11D6C5FF-16AD-47D0-A236-77AF1DEB18C2"/>
+                                        <variation key="heightClass=regular-widthClass=regular" image="8C288394-9165-4CB9-B78E-E4765125B2E2"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-0g-RCO" userLabel="InnerHolder">
                                         <rect key="frame" x="15.5" y="14.5" width="614" height="614.5"/>
@@ -645,7 +645,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="11D6C5FF-16AD-47D0-A236-77AF1DEB18C2" width="349" height="349">
+        <image name="8C288394-9165-4CB9-B78E-E4765125B2E2" width="349" height="349">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
