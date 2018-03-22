@@ -55,7 +55,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" image="imageView:JgH-BW-6RF:image"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="cavity_landscape"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="cavity_portrait"/>
-                                        <variation key="heightClass=regular-widthClass=regular" image="5AB50E71-C528-4885-9519-D0FB68068EB0"/>
+                                        <variation key="heightClass=regular-widthClass=regular" image="B5295B8F-3173-4FA0-BEB8-62D7B26E2C11"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-0g-RCO" userLabel="InnerHolder">
                                         <rect key="frame" x="15.5" y="14.5" width="614" height="614.5"/>
@@ -574,30 +574,30 @@
                                 <exclude reference="Cbk-Sp-NUO"/>
                                 <exclude reference="SKl-k7-mgK"/>
                                 <exclude reference="THD-Kv-PLf"/>
+                                <exclude reference="H4c-Y8-YeI"/>
+                                <exclude reference="SwH-8P-Red"/>
+                                <exclude reference="Xhb-IW-ZXA"/>
                                 <exclude reference="ZJu-oG-fWR"/>
                                 <exclude reference="9Kw-yB-fXe"/>
                                 <exclude reference="bi0-79-dJC"/>
                                 <exclude reference="hbt-HN-vrL"/>
                                 <exclude reference="tMl-yB-IcV"/>
-                                <exclude reference="Hch-CU-3pI"/>
-                                <exclude reference="fhI-6w-Rc6"/>
-                                <exclude reference="hEq-SO-THN"/>
-                                <exclude reference="sVr-2E-FsE"/>
-                                <exclude reference="H4c-Y8-YeI"/>
-                                <exclude reference="SwH-8P-Red"/>
-                                <exclude reference="Xhb-IW-ZXA"/>
                                 <exclude reference="IVR-D7-0ZX"/>
                                 <exclude reference="ctv-R5-0s4"/>
                                 <exclude reference="kbB-4H-6xr"/>
                                 <exclude reference="uXQ-3a-Hjf"/>
-                                <exclude reference="Id2-cS-gRh"/>
-                                <exclude reference="Nyn-mO-FDP"/>
-                                <exclude reference="Yck-GG-9B6"/>
-                                <exclude reference="det-9p-FsD"/>
                                 <exclude reference="6RA-0q-Ymu"/>
                                 <exclude reference="LiM-ci-jjt"/>
                                 <exclude reference="YO0-Ka-7Ve"/>
                                 <exclude reference="dZ5-xa-1pf"/>
+                                <exclude reference="Hch-CU-3pI"/>
+                                <exclude reference="fhI-6w-Rc6"/>
+                                <exclude reference="hEq-SO-THN"/>
+                                <exclude reference="sVr-2E-FsE"/>
+                                <exclude reference="Id2-cS-gRh"/>
+                                <exclude reference="Nyn-mO-FDP"/>
+                                <exclude reference="Yck-GG-9B6"/>
+                                <exclude reference="det-9p-FsD"/>
                                 <exclude reference="71S-My-alv"/>
                                 <exclude reference="hCU-Zm-TzU"/>
                                 <exclude reference="y4k-sL-16r"/>
@@ -643,10 +643,10 @@
                                 <include reference="SKl-k7-mgK"/>
                                 <include reference="ZJu-oG-fWR"/>
                                 <include reference="bi0-79-dJC"/>
-                                <include reference="fhI-6w-Rc6"/>
                                 <include reference="kbB-4H-6xr"/>
-                                <include reference="Id2-cS-gRh"/>
                                 <include reference="YO0-Ka-7Ve"/>
+                                <include reference="fhI-6w-Rc6"/>
+                                <include reference="Id2-cS-gRh"/>
                                 <include reference="71S-My-alv"/>
                                 <include reference="U6R-fd-613"/>
                                 <include reference="gJQ-9j-leB"/>
@@ -666,12 +666,12 @@
                                 <include reference="K01-NH-dfb"/>
                                 <include reference="7Cr-fd-oEY"/>
                                 <include reference="41i-LX-uWM"/>
-                                <include reference="hbt-HN-vrL"/>
-                                <include reference="sVr-2E-FsE"/>
                                 <include reference="SwH-8P-Red"/>
+                                <include reference="hbt-HN-vrL"/>
                                 <include reference="uXQ-3a-Hjf"/>
-                                <include reference="Yck-GG-9B6"/>
                                 <include reference="dZ5-xa-1pf"/>
+                                <include reference="sVr-2E-FsE"/>
+                                <include reference="Yck-GG-9B6"/>
                                 <include reference="y4k-sL-16r"/>
                                 <include reference="44i-e9-CRy"/>
                                 <include reference="klx-tU-bjc"/>
@@ -691,12 +691,12 @@
                                 <include reference="Dxd-pK-uZf"/>
                                 <include reference="Tsa-qI-JWH"/>
                                 <include reference="THD-Kv-PLf"/>
-                                <include reference="9Kw-yB-fXe"/>
-                                <include reference="Hch-CU-3pI"/>
                                 <include reference="Xhb-IW-ZXA"/>
+                                <include reference="9Kw-yB-fXe"/>
                                 <include reference="ctv-R5-0s4"/>
-                                <include reference="det-9p-FsD"/>
                                 <include reference="LiM-ci-jjt"/>
+                                <include reference="Hch-CU-3pI"/>
+                                <include reference="det-9p-FsD"/>
                                 <include reference="yCB-Dg-7B9"/>
                                 <include reference="avb-gY-wY6"/>
                                 <include reference="E7i-Eu-Smv"/>
@@ -716,12 +716,12 @@
                                 <include reference="F9t-YL-7hU"/>
                                 <include reference="qaf-xg-tYm"/>
                                 <include reference="Cbk-Sp-NUO"/>
-                                <include reference="tMl-yB-IcV"/>
-                                <include reference="hEq-SO-THN"/>
                                 <include reference="H4c-Y8-YeI"/>
+                                <include reference="tMl-yB-IcV"/>
                                 <include reference="IVR-D7-0ZX"/>
-                                <include reference="Nyn-mO-FDP"/>
                                 <include reference="6RA-0q-Ymu"/>
+                                <include reference="hEq-SO-THN"/>
+                                <include reference="Nyn-mO-FDP"/>
                                 <include reference="hCU-Zm-TzU"/>
                                 <include reference="YX1-5l-n8I"/>
                                 <include reference="94O-bq-3YS"/>
@@ -733,6 +733,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="display" destination="5Xi-to-kzw" id="QOh-OK-Hu8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0b-mG-aBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -740,7 +743,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5AB50E71-C528-4885-9519-D0FB68068EB0" width="349" height="349">
+        <image name="B5295B8F-3173-4FA0-BEB8-62D7B26E2C11" width="349" height="349">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -9,14 +9,25 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+  @IBOutlet weak var display: Display!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
+  var abc : Int = 0
   @IBAction func buttomTouchDownAction(_ sender: UIButton) {
     print("Tag \(sender.tag)")
+    
+    if sender.tag == 12 {
+      self.display.updatesModes(mode: Modes(rawValue: abc)!)
+      if abc > 5 {
+        abc = 0
+      }else{
+        abc += 1
+      }
+      
+    }
   }
   
   @IBAction func buttonTouchUpInsideOutsideCancel(_ sender: UIButton) {
