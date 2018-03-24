@@ -55,7 +55,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" image="imageView:JgH-BW-6RF:image"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="cavity_landscape"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="cavity_portrait"/>
-                                        <variation key="heightClass=regular-widthClass=regular" image="B5295B8F-3173-4FA0-BEB8-62D7B26E2C11"/>
+                                        <variation key="heightClass=regular-widthClass=regular" image="3C51D99C-A652-4688-88FB-52E165298185"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-0g-RCO" userLabel="InnerHolder">
                                         <rect key="frame" x="15.5" y="14.5" width="614" height="614.5"/>
@@ -743,7 +743,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B5295B8F-3173-4FA0-BEB8-62D7B26E2C11" width="349" height="349">
+        <image name="3C51D99C-A652-4688-88FB-52E165298185" width="349" height="349">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

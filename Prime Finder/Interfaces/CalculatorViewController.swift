@@ -10,7 +10,7 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
   @IBOutlet weak var display: Display!
-  
+  private var text : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,8 +18,13 @@ class CalculatorViewController: UIViewController {
   var abc : Int = 0
   @IBAction func buttomTouchDownAction(_ sender: UIButton) {
     print("Tag \(sender.tag)")
-    
-    if sender.tag == 12 {
+    if sender.tag >= 0 && sender.tag < 10 {
+      self.display.insertText("\(sender.tag)")
+    }else if sender.tag == 10 {
+      self.display.deleteAll()
+    }else if sender.tag == 11 {
+      self.display.deleteBackward()
+    }else if sender.tag == 12 {
       self.display.updatesModes(mode: Modes(rawValue: abc)!)
       if abc > 5 {
         abc = 0
