@@ -8,13 +8,59 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
-  @IBOutlet weak var display: Display!
+class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate {
+  @IBOutlet weak var copyPasteHolder : UIView!
+  @IBOutlet weak var display : Display!
+  var tapGestureRecognizer : UITapGestureRecognizer!
+  
   private var text : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+      self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: nil)
+      self.tapGestureRecognizer.delegate = self
+      self.view.addGestureRecognizer(self.tapGestureRecognizer)
         
     }
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    let touchPoint = touch.location(in: self.view)
+    var isTouchedToTheDisplay : Bool = false
+    if let aView = self.view.hitTest(touchPoint, with: nil){
+      print(aView)
+      if aView.isKind(of: Display.self){
+        print("Touched to Displayyy")
+        isTouchedToTheDisplay = true
+      }
+    }
+    if isTouchedToTheDisplay {
+      if self.copyPasteHolder.isUserInteractionEnabled {
+        concealCopyPasteHolder()
+      }else{
+        revealCopyPasteHolder()
+      }
+    }else{
+      concealCopyPasteHolder()
+    }
+    
+    return false
+  }
+  
+  func revealCopyPasteHolder(){
+    self.copyPasteHolder.alpha = 1.0
+    self.copyPasteHolder.isUserInteractionEnabled = true
+  }
+  func concealCopyPasteHolder(){
+    UIView.animate(withDuration: 0.35, animations: {
+      self.copyPasteHolder.alpha = 0.0
+    }) { (completed) in
+      self.copyPasteHolder.isUserInteractionEnabled = false
+    }
+  }
+  @IBAction func copyAction(_ sender: UIButton) {
+  }
+  @IBAction func pasteAction(_ sender: UIButton) {
+  }
+  
+  
   var abc : Int = 0
   @IBAction func buttomTouchDownAction(_ sender: UIButton) {
     print("Tag \(sender.tag)")
@@ -34,7 +80,7 @@ class CalculatorViewController: UIViewController {
       
     }
   }
-  
+
   @IBAction func buttonTouchUpInsideOutsideCancel(_ sender: UIButton) {
   }
   

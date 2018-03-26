@@ -55,7 +55,7 @@
                                         <variation key="heightClass=compact-widthClass=compact" image="imageView:JgH-BW-6RF:image"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="cavity_landscape"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="cavity_portrait"/>
-                                        <variation key="heightClass=regular-widthClass=regular" image="3C51D99C-A652-4688-88FB-52E165298185"/>
+                                        <variation key="heightClass=regular-widthClass=regular" image="A5D8B947-ABAE-4745-A5D4-B3812FBF16A9"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-0g-RCO" userLabel="InnerHolder">
                                         <rect key="frame" x="15.5" y="14.5" width="614" height="614.5"/>
@@ -411,18 +411,24 @@
                                     <constraint firstItem="5Xi-to-kzw" firstAttribute="width" secondItem="sCj-bV-re3" secondAttribute="width" id="Y0p-Hh-zkC"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-kf-KFW" userLabel="CopyPaste">
+                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-kf-KFW" userLabel="CopyPaste">
                                 <rect key="frame" x="288" y="198" width="192" height="76.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-2C-Czr" userLabel="Copy">
                                         <rect key="frame" x="0.5" y="0.0" width="96.5" height="76.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Button" image="copy"/>
+                                        <connections>
+                                            <action selector="copyAction:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="ITn-XK-K2z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PY-0N-YNA" userLabel="Paste">
                                         <rect key="frame" x="95.5" y="0.0" width="96.5" height="76.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Button" image="paste"/>
+                                        <connections>
+                                            <action selector="pasteAction:" destination="muD-Lj-Nhg" eventType="touchUpInside" id="HvM-F5-Pek"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -734,6 +740,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="copyPasteHolder" destination="r2l-kf-KFW" id="DRi-xZ-koM"/>
                         <outlet property="display" destination="5Xi-to-kzw" id="QOh-OK-Hu8"/>
                     </connections>
                 </viewController>
@@ -743,7 +750,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3C51D99C-A652-4688-88FB-52E165298185" width="349" height="349">
+        <image name="A5D8B947-ABAE-4745-A5D4-B3812FBF16A9" width="349" height="349">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

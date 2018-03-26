@@ -75,7 +75,7 @@ class Display: UIView {
   private var glowRadius : CGFloat = 0
   private var modeTextHeight:CGFloat = 0
   private var modeImageView:UIImageView!
-  private var primeImageView:UIImageView!
+  private var primeIndicatorImageview:UIImageView!
   private var calculationIndicatorImageView:UIImageView!
   private var digitsImageview:UIImageView!
   
@@ -101,50 +101,49 @@ class Display: UIView {
     self.addSubview(imageView)
     self.addConstraints([
       NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
       NSLayoutConstraint(item: imageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0),
-      NSLayoutConstraint(item: imageView, attribute: .bottom , relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
       NSLayoutConstraint(item: imageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
-      
       ])
-    
     let mainHolderView = UIView()
     mainHolderView.translatesAutoresizingMaskIntoConstraints = false
+    mainHolderView.isUserInteractionEnabled = false
     self.addSubview(mainHolderView)
     self.addConstraints([
       NSLayoutConstraint(item: mainHolderView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),
       NSLayoutConstraint(item: mainHolderView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0),
-      NSLayoutConstraint(item: mainHolderView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: holderViewSize.width),
-      NSLayoutConstraint(item: mainHolderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: holderViewSize.height)
+      NSLayoutConstraint(item: mainHolderView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.holderViewSize.width),
+      NSLayoutConstraint(item: mainHolderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.holderViewSize.height)
       ])
     
+    self.layoutIfNeeded()
     
-    let displayBackgroundImageView = UIImageView(frame : CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
-    displayBackgroundImageView.contentMode = .scaleToFill
-    displayBackgroundImageView.image = createDisplayBackdroundImage()
-    mainHolderView.addSubview(displayBackgroundImageView)
+    if let backgroundImage = createDisplayBackdroundImage() {
+      let displayBackgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
+      displayBackgroundImageView.contentMode = .scaleToFill
+      displayBackgroundImageView.image = backgroundImage
+      mainHolderView.addSubview(displayBackgroundImageView)
+    }
     
-    let illuminationLayerHolderView = UIView(frame : CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
-    mainHolderView.addSubview(illuminationLayerHolderView)
+    let illuminationLayersHolderView = UIView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
+    mainHolderView.addSubview(illuminationLayersHolderView)
+    
     self.modeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
     self.modeImageView.contentMode = .scaleToFill
-    illuminationLayerHolderView.addSubview(self.modeImageView)
-    updatesModes(mode: .MValidator)
+    illuminationLayersHolderView.addSubview(self.modeImageView)
+    updatesModes(mode: Modes.Mnext10)
     
-    
-    
-    self.primeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
-    self.primeImageView.contentMode = .scaleToFill
-    illuminationLayerHolderView.addSubview(primeImageView)
+    self.primeIndicatorImageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
+    self.primeIndicatorImageview.contentMode = .scaleToFill
+    illuminationLayersHolderView.addSubview(self.primeIndicatorImageview)
     
     self.calculationIndicatorImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
-    self.primeImageView.contentMode = .scaleToFill
-    illuminationLayerHolderView.addSubview(calculationIndicatorImageView)
-    calculationIndicatorImageView.image = createCalculationIndicatorImage(indicator: CalculationIndicator.CI10)
+    self.calculationIndicatorImageView.contentMode = .scaleToFill
+    illuminationLayersHolderView.addSubview(self.calculationIndicatorImageView)
     
-    // ImageView For Digit
     self.digitsImageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
     self.digitsImageview.contentMode = .scaleToFill
-    illuminationLayerHolderView.addSubview(digitsImageview)
+    illuminationLayersHolderView.addSubview(self.digitsImageview)
     numProcessor(text: "0")
     
     //MARK Display titreme animasyonu
@@ -156,7 +155,7 @@ class Display: UIView {
     opacityAnimation.autoreverses = true
     opacityAnimation.repeatCount = HUGE
     opacityAnimation.isRemovedOnCompletion = false
-    illuminationLayerHolderView.layer.add(opacityAnimation, forKey: nil)
+    illuminationLayersHolderView.layer.add(opacityAnimation, forKey: nil)
     
     self.layoutIfNeeded()
     
@@ -530,8 +529,8 @@ class Display: UIView {
   
   
   func updatePrimeIndicator(indicator: PrimeIndicator) {
-    if self.primeImageView != nil {
-      self.primeImageView.image = createPrimeIndicatorImage(indicator: indicator)
+    if self.primeIndicatorImageview != nil {
+      self.primeIndicatorImageview.image = createPrimeIndicatorImage(indicator: indicator)
     }
   }
   
