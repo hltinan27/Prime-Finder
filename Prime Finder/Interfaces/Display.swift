@@ -71,13 +71,14 @@ class Display: UIView {
   private var calculationIndicatorStack = [String : UIImage]()
   private var holderViewSize:CGSize = .zero
   private var digitHeight:CGFloat = 0
-  private var maxDigitCount:Int = 12
+  var maxDigitCount:Int = 12
   private var glowRadius : CGFloat = 0
   private var modeTextHeight:CGFloat = 0
   private var modeImageView:UIImageView!
   private var primeIndicatorImageview:UIImageView!
   private var calculationIndicatorImageView:UIImageView!
   private var digitsImageview:UIImageView!
+  var currentMode:Modes = .MValidator
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -131,7 +132,7 @@ class Display: UIView {
     self.modeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
     self.modeImageView.contentMode = .scaleToFill
     illuminationLayersHolderView.addSubview(self.modeImageView)
-    updatesModes(mode: Modes.Mnext10)
+    updatesModes(mode: currentMode)
     
     self.primeIndicatorImageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.holderViewSize.width, height: self.holderViewSize.height))
     self.primeIndicatorImageview.contentMode = .scaleToFill
