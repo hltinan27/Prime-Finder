@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KVj-uo-tIz" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="m8H-My-Rlu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m8H-My-Rlu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="0aM-1H-1Cd"/>
+                            <constraint firstItem="KVj-uo-tIz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9w7-ur-WFu"/>
+                            <constraint firstItem="KVj-uo-tIz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Dzi-Nc-3xt"/>
+                            <constraint firstAttribute="trailing" secondItem="m8H-My-Rlu" secondAttribute="trailing" id="TyU-gF-hDR"/>
+                            <constraint firstAttribute="trailing" secondItem="KVj-uo-tIz" secondAttribute="trailing" id="VKM-fT-bD1"/>
+                            <constraint firstAttribute="bottom" secondItem="KVj-uo-tIz" secondAttribute="bottom" id="gcI-fZ-3mb"/>
+                            <constraint firstAttribute="bottom" secondItem="m8H-My-Rlu" secondAttribute="bottom" id="hG8-Hz-Vsf"/>
+                            <constraint firstItem="m8H-My-Rlu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oHR-zD-WJh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +44,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="375" height="375"/>
+        <image name="launchScreenTitle" width="375" height="375"/>
+    </resources>
 </document>

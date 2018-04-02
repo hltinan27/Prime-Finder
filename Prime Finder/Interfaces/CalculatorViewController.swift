@@ -27,6 +27,7 @@ class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate,Pri
     self.tapGestureRecognizer.delegate = self
     self.view.addGestureRecognizer(self.tapGestureRecognizer)
     PrimeEngine.sharedInstance.delegate = self
+    SoundPlayer.sharedInstance.prepareSoundPlayer()
     
     
   }
@@ -88,6 +89,8 @@ class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate,Pri
   }
   
   func errorStimulation(){
+    SoundPlayer.sharedInstance.playShake()
+    Taptics.sharedInstance.makeErrorStimulationImpact()
     let shakeGap = ceil(self.view.bounds.size.width * 0.025)
     let animation = CABasicAnimation(keyPath: "position")
     animation.duration = 0.05
@@ -100,6 +103,8 @@ class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate,Pri
   
   var abc : Int = 0
   @IBAction func buttomTouchDownAction(_ sender: UIButton) {
+    SoundPlayer.sharedInstance.playTouchDown()
+    Taptics.sharedInstance.makeTouchDownImpact()
     sender.alpha = 0.6
     if self.innerHolder.isUserInteractionEnabled {
       self.innerHolder.isUserInteractionEnabled = false
@@ -263,7 +268,7 @@ class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate,Pri
           
         }else if self.display.currentMode == .Mprev100{
           let currentValueOnDisplay = self.display.getCurrentValue()
-          PrimeEngine.sharedInstance.processWith(type: .PPTFindPrev, start: currentValueOnDisplay, repetetions: 10, completionHandler: { (result) in
+          PrimeEngine.sharedInstance.processWith(type: .PPTFindPrev, start: currentValueOnDisplay, repetetions: 100, completionHandler: { (result) in
             if let calculationResult = result {
               
               if let firstValue = calculationResult.calculatedValues.first{
@@ -295,6 +300,8 @@ class CalculatorViewController: UIViewController,UIGestureRecognizerDelegate,Pri
   }
   
   @IBAction func buttonTouchUpInsideOutsideCancel(_ sender: UIButton) {
+    SoundPlayer.sharedInstance.playTouchUp()
+    Taptics.sharedInstance.makeTouchUpImpact()
     self.innerHolder.isUserInteractionEnabled = true
     sender.alpha = 1.0
   }
